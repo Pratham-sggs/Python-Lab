@@ -9,11 +9,10 @@ def print_pattern (x) :
 line = input("Enter Number Of lines: ")
 line = int(line);
 k = print_pattern(line);
-if(k):
-	print("Work in progress")
-    line_number = 0;
-    spaces = 0;
-    number_of_spaces_in_first_line = 3*
-
-else :
-	print("Enter valid number")
+base_width=line;
+line_to_print_number = line+1;
+number_of_spaces = 3*line;
+number_of_stars = 0;
+#to print the upper part without base
+for i in range (0,line*2) :
+    print()
