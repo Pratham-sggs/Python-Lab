@@ -15,4 +15,4 @@ total_number_of_spaces = 3*line;
 number_of_stars = 0;
 #to print the upper part without base
 for i in range (0,line*2) :
-    print()
+    print();
