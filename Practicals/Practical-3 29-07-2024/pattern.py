@@ -35,8 +35,6 @@ def print_pattern (line) :
             list.append("* "*(total_number_of_spaces+(2*(line-1))));
     return list;
           
-line = input("Enter Number Of lines: ")
-line = int(line);
-k = print_pattern(line);
+k = print_pattern(8);
 for i in range(0,len(k)) :
     print(k[i])
