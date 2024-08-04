@@ -2,10 +2,13 @@ def print_pattern (line) :
     list=[]
     if(line<1) :
         list.append("Invalid Number");
+        return list;
     else :
         z=int(line);
         if(z-line) :
             list.append("Invalid Number");
+            return list;
+        line=int(line)
         total_number_of_spaces = 2*(line+2);
         number_of_spaces = 0;
         star = 0;
@@ -35,6 +38,6 @@ def print_pattern (line) :
             list.append("* "*(total_number_of_spaces+(2*(line-1))));
     return list;
           
-k = print_pattern(8);
+k = print_pattern(8.0000);
 for i in range(0,len(k)) :
     print(k[i])
