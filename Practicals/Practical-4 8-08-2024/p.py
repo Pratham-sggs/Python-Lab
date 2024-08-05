@@ -20,7 +20,7 @@ def modulo (a,b) :
         a =a[1:]
         a = int(a)
         return a;
-    if a > 0 and b < 0 :
+    if a > 0 and b < 0 : 
         sum = 0
         b = abs(b)
         while (sum<a) :
