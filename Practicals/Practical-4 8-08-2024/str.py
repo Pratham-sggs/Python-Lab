@@ -17,4 +17,4 @@ def count (String,sub_str,truth_value) :
             else:
                 i += 1
         return count
-print(count("sgsgsgsg","sgqqqqqqs",True))
+print(count("sgsgsgsg","sgs",False))
