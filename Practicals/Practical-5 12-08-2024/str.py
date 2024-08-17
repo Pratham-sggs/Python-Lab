@@ -1,20 +1,14 @@
-def count (String,sub_str,truth_value) :
-    count = 0
+def count(String, sub_str, truth_value, start=0):
     length = len(sub_str)
-    if(truth_value) :
-        for i in range(0,len(String)) :
-            s = String[i:i+length]
-            if s == sub_str :
-                count += 1
-        return count
-    else :
-        i = 0
-        while i <= len(String) - length:
-            s = String[i:i + length]
-            if s == sub_str:
-                count += 1
-                i += length
-            else:
-                i += 1
-        return count
-print(count("sgsgsgsg","sgs",False))
+    if start > len(String) - length:
+        return 0
+    
+    if String[start:start + length] == sub_str:
+        if truth_value:
+            return 1 + count(String, sub_str, truth_value, start + 1)
+        else:
+            return 1 + count(String, sub_str, truth_value, start + length)
+    else:
+        return count(String, sub_str, truth_value, start + 1)
+
+print(count("sgsgsgsg", "sgs", True))
