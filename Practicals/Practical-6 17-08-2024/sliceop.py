@@ -56,7 +56,7 @@ def slice(object, slicing_parameters) :
 		if type_of_obj == str :
 			return "";
 		else :
-			return [];
+			return []
 
 
 print(slice("hjekhaflieu",[8,6,1]))
