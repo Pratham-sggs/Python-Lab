@@ -31,7 +31,7 @@ def slice(object, slicing_parameters) :
 			return "";
 		else :
 			return [];
-	elif (start < end and start >= 0 and end > 0 and step > 0) :
+	elif (start < end and start >= 0 and end > 0 and step > 0) :   # if both are positive and step is positive
 		type_of_obj = type(object)
 		truth = False
 		if type_of_obj == str :
@@ -50,7 +50,7 @@ def slice(object, slicing_parameters) :
 				result.append(object[i])
 				i += step
 			return result;
-	if (end >= 0 and start >= 0 and step < 0) :
+	elif (end >= 0 and start >= 0 and step < 0) :      # if both are positive and step is negative
 		type_of_obj = type(object)
 		
 		if type_of_obj == str :
