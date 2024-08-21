@@ -2,7 +2,7 @@ def slice(object, slicing_parameters) :
 	length = len(slicing_parameters)
 
 	if length > 3 :
-		return "Only 3 arguments required";
+		return "Only 3 arguments required....";
 	
 	start = 0;
 	end = len(object);
