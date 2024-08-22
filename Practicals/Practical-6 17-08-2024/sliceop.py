@@ -50,7 +50,7 @@ def slice(object, slicing_parameters) :
 				result.append(object[i])
 				i += step
 			return result;
-	elif (end >= 0 and start >= 0 and step < 0) :      # if both are positive and step is negative
+	elif (end >= 0 and start >= 0 and step < 0) :      # if both are positive and step is negative.....
 		type_of_obj = type(object)
 		
 		if type_of_obj == str :
