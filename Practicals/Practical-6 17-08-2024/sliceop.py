@@ -8,7 +8,6 @@ def slice(object, slicing_parameters) :
 	end = len(object);
 	step = 1;
 	result = "";
-	truth_value = True
 	type_of_obj = type(object)
 	if type_of_obj == str :
 		truth_value = False
