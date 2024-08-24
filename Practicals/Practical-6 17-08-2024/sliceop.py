@@ -8,7 +8,10 @@ def slice(object, slicing_parameters) :
 	end = len(object);
 	step = 1;
 	result = "";
-	
+	truth_value = True
+	type_of_obj = type(object)
+	if type_of_obj == str :
+		truth_value = False
 	if length == 1 :
 		start = slicing_parameters.pop()
 
@@ -21,43 +24,41 @@ def slice(object, slicing_parameters) :
 		start = slicing_parameters.pop()
 	if step == 0 :
 		return "Error! Step can't be 0"
-	if end > len(object) :
-		end = len(object);
+	
+	if start < 0:
+		start += len(object)
 
-	if (start>= end) :
-		type_of_obj = type(object)
-		
-		if type_of_obj == str :
-			return "";
-		else :
-			return [];
-	elif (start < end and start >= 0 and end > 0 and step > 0) :   # if both are positive and step is positive
-		type_of_obj = type(object)
-		truth = False
-		if type_of_obj == str :
-			truth = True;
+	if end < 0:
+		end += len(object)
 
-		if truth :
-			i = start;
-			while i < end :
-				result = result + object[i]
-				i += step
-			return result;
-		else :
-			i = start;
-			result = []
-			while i < end :
-				result.append(object[i])
-				i += step
-			return result;
-	elif (end >= 0 and start >= 0 and step < 0) :      # if both are positive and step is negative.....
-		type_of_obj = type(object)
-		
-		if type_of_obj == str :
-			return "";
-		else :
-			return []
+	if step < 0:
+			if start >= len(object):
+				start = len(object) - 1
+			if end < 0:
+				end = -1
+	
+	if step > 0:
+		if start >= len(object):
+			return "" if type_of_obj == str else []
+		if end > len(object):
+			end = len(object)
+		i = start
+		while i < end:
+			result += object[i]
+			i += step
+	else:
+
+		if start < 0:
+			return "" if type_of_obj == str else []
+		i = start
+		while i > end:
+			result += object[i]
+			i += step
+
+	if type_of_obj == str :
+		return result 
+	else :
+		return list(result)
 
 
-print(slice("hjekhaflieu",[8,6,1]))
-			
+print(slice("Pratham",[0,100,1]))
