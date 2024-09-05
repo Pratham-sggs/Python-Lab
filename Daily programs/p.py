@@ -9,4 +9,4 @@ def isPalindrome(s: str) -> bool:
         else :
             return False
 
-print(isPalindrome(",,,,,,,,,,,.....,acva"))
+print(isPalindrome(",,,,,,,,,,,.......,acva"))
