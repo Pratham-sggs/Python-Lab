@@ -3,7 +3,7 @@ def binary_subtraction (a,b) :
     a = a.lower()
     b = b.lower()
 
-    value = 1
+    value = 0
 
     if a.startswith("-0b") :
         a = "-" + a[3:]
@@ -11,29 +11,27 @@ def binary_subtraction (a,b) :
         a = a[2:]
     
     if b.startswith("-0b") :
-        b = "-" + a[3:]
+        b = "-" + b[3:]
     elif b.startswith("0b") :
-        b = a[2:]
+        b = b[2:]
     
     if "-" in a and "-" in b :
-        value = 4 
+        value = 1
         a = a[1:]
         b = b[1:]
     elif "-" in a :
-        value = 3
         a = a[1:]
-        return "-" + binary_addition(a,b)
+        if is_valid_binary(a,b) :
+            return "-" + binary_addition(a,b)
+        else :
+            return "Invalid Binary"
+        
     elif "-" in b :
-        value = 2
         b = b[1:]
-        return binary_addition(a,b)
-
-    for i in a :
-        if not(i in valid_num) :
-            return "Invalid Binary Numbers"
-    for i in b :
-        if not(i in valid_num) :
-            return "Invalid Binary Numbers"
+        if is_valid_binary(a,b) :
+            return binary_addition(a,b)
+        else :
+            return "Invalid Binary"
     
     return 0
 
@@ -65,7 +63,17 @@ def binary_addition (num1,num2) :
         result = "1" + result
     return result
 
-        
+def subtraction (a,b) :
+    print()
+
+def is_valid_binary(a,b) :
+    for i in a :
+        if not(i in valid_num) :
+            return False
+    for i in b :
+        if not(i in valid_num) :
+            return False
+    return True
 
 print(binary_subtraction("-1011","1011"))
 
