@@ -12,7 +12,7 @@ if (operation=='+'){
     c=a+b;
 }
 else if (operation=='-'){
-    c=a-b;
+    c=a-b; // Subtraction
 
 }
 else if (operation=='*'){
