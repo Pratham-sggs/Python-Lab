@@ -52,4 +52,13 @@ def check_performance(approaches):
     return avg_time_taken
 
 
-print(check_performance([fun1,fun]))
+def better_approach():
+    time_list = check_performance([fun1, fun])
+    apr1, apr2 = time_list[0], time_list[1]
+    result_per = ((apr1 - apr2) / apr1) * 100
+    
+    if result_per < 0:
+        print(f"Approach 2 is {-result_per:.2f}% faster than approach 1")
+    else:
+        print(f"Approach 1 is {result_per:.2f}% faster than approach 2")
+better_approach()
