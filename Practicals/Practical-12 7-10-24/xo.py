@@ -11,7 +11,7 @@ def display (grid,size) :
 		print(" --- " + "--- "*(size-1))
 
 
-def make_grid(size) :
+def make_grid(size) : #Pratham
 	result = []
 	for _ in range(size) :
 		result.append(dict(zip(range(1,size+1)," "*(size+1))))
