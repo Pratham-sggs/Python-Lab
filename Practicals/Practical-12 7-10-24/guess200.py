@@ -12,5 +12,6 @@ def game() :
 		else :
 			print("You guessed a big number")
 	else :
+		print(num)
 		return "You Lost! The guess is incorrect"
 print(game())

@@ -11,7 +11,7 @@ def display (grid,size) :
 		print(" --- " + "--- "*(size-1))
 
 
-def make_grid(size) : #Pratham
+def make_grid(size) :
 	result = []
 	for _ in range(size) :
 		result.append(dict(zip(range(1,size+1)," "*(size+1))))
@@ -32,4 +32,5 @@ def start(size,grid) :
 		player1,player2 = player2,player1
 	chance = 0 
 	while chance < (size*size) :
-		move = input()
+		input_tuple = tuple(map(int, input("Enter two integers separated by a space: ").split()))
+		print("The tuple is:", input_tuple)
